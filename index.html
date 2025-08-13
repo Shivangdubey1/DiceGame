@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dice Race — First to 50</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Dice Race — First to 50 Wins</h1>
+
+    <!-- Controls -->
+    <section class="controls">
+      <div class="inputs">
+        <label for="p1">
+          <span>Player 1</span>
+          <input id="p1" type="text" placeholder="Enter name for Player 1" />
+        </label>
+
+        <label for="p2">
+          <span>Player 2</span>
+          <input id="p2" type="text" placeholder="Enter name for Player 2" />
+        </label>
+      </div>
+
+      <div class="buttons">
+        <button id="start" onclick="startGame()">Start</button>
+        <button id="restart" onclick="restartGame()" disabled>Restart</button>
+      </div>
+    </section>
+
+    <!-- Game board -->
+    <section class="board" aria-label="Game board">
+      <!-- Player 1 -->
+      <article class="player" id="player1">
+        <h2 id="p1nmlb">Player 1</h2>
+        <p class="score-label">Score: <strong id="p1sc">0</strong></p>
+
+        <table class="score-table" aria-label="Player 1 scoreboard">
+          <thead><tr><th>Player</th><th>Score</th></tr></thead>
+          <tbody><tr><td id="p1name">Player 1</td><td id="p1sc-table">0</td></tr></tbody>
+        </table>
+
+        <img id="p1dice" src="./images/1.png" alt="Player 1 dice" />
+        <button id="rolldice1" onclick="p1Play()" disabled class="roll-btn">Roll — P1</button>
+      </article>
+
+      <!-- Player 2 -->
+      <article class="player" id="player2">
+        <h2 id="p2nmlb">Player 2</h2>
+        <p class="score-label">Score: <strong id="p2sc">0</strong></p>
+
+        <table class="score-table" aria-label="Player 2 scoreboard">
+          <thead><tr><th>Player</th><th>Score</th></tr></thead>
+          <tbody><tr><td id="p2name">Player 2</td><td id="p2sc-table">0</td></tr></tbody>
+        </table>
+
+        <img id="p2dice" src="./images/1.png" alt="Player 2 dice" />
+        <button id="rolldice2" onclick="p2Play()" disabled class="roll-btn">Roll — P2</button>
+      </article>
+    </section>
+
+    <section class="rules">
+      <p>Rules: Roll dice — if you roll a 6 or your roll would take you past 50 your turn ends. First to reach exactly 50 wins.</p>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
